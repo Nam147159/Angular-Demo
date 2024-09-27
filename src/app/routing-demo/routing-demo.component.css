@@ -26,3 +26,8 @@ h1 {
     margin: 10px 0; /* Khoảng cách giữa các liên kết */
     transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
 }
+
+.demo-link:hover {
+    background-color: #2196F3; /* Đổi màu nền khi hover */
+    color: white; /* Đổi màu chữ khi hover */
+}
