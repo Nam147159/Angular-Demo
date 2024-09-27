@@ -1,16 +1,17 @@
-import { AfterViewInit, Component, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, OnInit, signal, ViewChild } from '@angular/core';
 import { TestService } from '../services/test-component.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../services/api.service';
 import { JsonPipe } from '@angular/common';
 import { debounce, debounceTime, fromEvent } from 'rxjs';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
   selector: 'test-component',
   standalone: true,
-  imports: [HttpClientModule, JsonPipe, ReactiveFormsModule],
+  imports: [HttpClientModule, JsonPipe, ReactiveFormsModule, FormsModule],
   providers: [],
   templateUrl: '../test-component/test-component.component.html',
   styleUrl: '../test-component/test-component.component.css'
@@ -79,12 +80,6 @@ export class TestComponentComponent implements AfterViewInit, OnInit {
 
   // Reactive form
   registerForm: any;
-  // registerForm = this.fb.group({
-  //   username: ['', Validators.required],
-  //   password: ['', Validators.required],
-  //   email: ['', [Validators.required, Validators.email]],
-  //   roleId: [1, Validators.required],
-  // });
   isSubmitted = false;
   roles = [
     { id: 1, title: 'developer' },
@@ -104,5 +99,12 @@ export class TestComponentComponent implements AfterViewInit, OnInit {
       this.registerForm.invalid
     );
     this.isSubmitted = true;
+  }
+
+  user = { name: '', email: '' };
+  submitted = false;
+  onSubmitForm() {
+    this.submitted = true;
+    console.log('Form submitted', this.user);
   }
 }

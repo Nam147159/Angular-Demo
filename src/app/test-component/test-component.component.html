@@ -69,6 +69,7 @@
 </div>
 
 <div class="demo-section">
+  <!--Reactive form demo-->
   <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="field">
       <label class="label">username</label>
@@ -132,4 +133,25 @@
       <button type="submit" class="button">Register</button>
     </div>
   </form>
+</div>
+
+<div class="demo-section">
+  <form (ngSubmit)="onSubmitForm()" #userForm="ngForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="user.name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="user.email" required email>
+    </div>
+    <button type="submit" [disabled]="!userForm.form.valid">Submit</button>
+  </form>
+  <div>
+    @if (submitted) {
+      <h2>You submitted:</h2>
+      <p>Name: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+    }
+  </div>
 </div>
