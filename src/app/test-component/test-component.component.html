@@ -67,3 +67,69 @@
   <button id="clickButton">Click me!</button>
   <p>{{clickMessage}}</p>
 </div>
+
+<div class="demo-section">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label class="label">username</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="username"
+        [class.invalid]="
+          registerForm.get('username')?.invalid &&
+          (registerForm.get('username')?.dirty ||
+            registerForm.get('username')?.touched ||
+            isSubmitted)
+        "
+      />
+      @if (registerForm.get('username')?.hasError('required') &&
+      (registerForm.get('username')?.dirty ||
+        registerForm.get('username')?.touched ||
+        isSubmitted)) {
+          <span class="error">This field is required.</span>
+        }
+    </div>
+    <div class="field">
+      <label class="label">email</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="email"
+        [class.invalid]="
+          registerForm.get('email')?.invalid &&
+          (registerForm.get('email')?.dirty ||
+            registerForm.get('email')?.touched ||
+            isSubmitted)
+        "
+      />
+    </div>
+    <div class="field">
+      <label class="label">password</label>
+      <input
+        type="text"
+        class="input"
+        formControlName="password"
+        [class.invalid]="
+          registerForm.get('password')?.invalid &&
+          (registerForm.get('password')?.dirty ||
+            registerForm.get('password')?.touched ||
+            isSubmitted)
+        "
+      />
+    </div>
+
+    <select formControlName="roleId">
+      @for (role of roles; track $index) {
+        <option>
+          {{ role.title }}
+        </option>
+      }
+      
+    </select>
+
+    <div>
+      <button type="submit" class="button">Register</button>
+    </div>
+  </form>
+</div>
