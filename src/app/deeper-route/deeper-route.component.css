@@ -1,0 +1,8 @@
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #4CAF50; /* Màu xanh lá cây để nhấn mạnh tiêu đề */
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    letter-spacing: 2px; /* Khoảng cách giữa các ký tự */
+}

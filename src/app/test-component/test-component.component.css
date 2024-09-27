@@ -1,0 +1,46 @@
+.demo-section {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .demo-section h3 {
+    color: #4CAF50;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .demo-section p, 
+  .demo-section ul, 
+  .demo-section button {
+    margin: 10px 0;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #c5e1a5;
+  }
+  
+  button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

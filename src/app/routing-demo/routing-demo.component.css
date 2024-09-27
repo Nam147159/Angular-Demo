@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Arial', sans-serif;
+    color: #4CAF50; /* Màu xanh lá cây để nhấn mạnh tiêu đề */
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+    letter-spacing: 2px; /* Khoảng cách giữa các ký tự */
+}
+
+.link-container {
+    text-align: center; /* Canh giữa nội dung */
+    margin-top: 20px;
+}
+
+.demo-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: #2196F3; /* Màu xanh dương */
+    background-color: #f1f1f1; /* Màu nền nhẹ */
+    padding: 12px 24px; /* Thêm padding cho liên kết */
+    border-radius: 5px; /* Bo góc */
+    border: 2px solid #2196F3;
+    display: inline-block;
+    margin: 10px 0; /* Khoảng cách giữa các liên kết */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển đổi màu sắc */
+}
